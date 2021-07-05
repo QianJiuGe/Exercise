@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Test6_29" />
         <module name="Test0629" />
+        <module name="TestMybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
