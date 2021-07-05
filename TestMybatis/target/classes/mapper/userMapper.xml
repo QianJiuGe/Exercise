@@ -4,23 +4,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.example.mapper.UserMapper">
-
-    //查询
     <select id="getAllUser" resultType="org.example.pojo.User">
-        select *
-        from t_user
+        SELECT * FROM t_user;
     </select>
 
-    <!--    //插入-->
-    <!--    <insert id="....">-->
-    <!--    </insert>-->
+<!--    <insert id="insert" parameterType="org.example.pojo.User">-->
+<!--        INSERT INTO student (name,score,age,gender) VALUES (#{name},#{score},#{age},#{gender});-->
+<!--    </insert>-->
 
-    <!--    //更新-->
-    <!--    <update id="...." >-->
-    <!--    </update>-->
+<!--    <delete id="delete" parameterType="int">-->
+<!--        DELETE FROM student WHERE id = #{id};-->
+<!--    </delete>-->
 
-    <!--    //删除-->
-    <!--    <delete id="...">-->
-    <!--    </delete>-->
-
+<!--    <select id="findByName" parameterType="string" resultType="org.example.pojo.User">-->
+<!--        SELECT * FROM student WHERE name like '%${value}%';-->
+<!--    </select>-->
 </mapper>
+
