@@ -1,6 +1,5 @@
-package com.yogurt.dao;
+package org.example.mapper;
 
-import com.yogurt.po.Student;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -20,27 +19,9 @@ public class UserDao {
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
     }
 
-    public List<User> findAll() {
+    public List<User> getAllUser() {
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        List<User> userList = sqlSession.selectList("getAllUser");
-        sqlSession.close();
-        return userList;
-    }
-
-//    public int addStudent(Student student) {
-//        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        int rowsAffected = sqlSession.insert("insert", student);
-//        sqlSession.commit();
-//        sqlSession.close();
-//        return rowsAffected;
-//    }
-//
-//    public int deleteStudent(int id) {
-//        SqlSession sqlSession = sqlSessionFactory.openSession();
-//        int rowsAffected = sqlSession.delete("delete",id);
-//        sqlSession.commit();
-//        sqlSession.close();
-//        return rowsAffected;
+        List<User> allUser = sqlSession.selectList("getAllUser");
+        return allUser;
     }
 }
-
