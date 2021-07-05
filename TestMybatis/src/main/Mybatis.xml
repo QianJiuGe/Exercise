@@ -7,7 +7,7 @@
         <environment id="dev">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="${driver}"/>
+                <property name="driver" value="com."/>
                 <property name="url" value="${url}"/>
                 <property name="username" value="${username}"/>
                 <property name="password" value="${password}"/>
@@ -15,6 +15,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="resources/mapper/userMapper.xml"/>
+        <mapper resource="mapper/userMapper.xml"/>
     </mappers>
 </configuration>

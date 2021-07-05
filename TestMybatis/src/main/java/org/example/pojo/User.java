@@ -1,9 +1,18 @@
 package org.example.pojo;
 
 public class User {
+    private Long id;
     private String username;
     private String email;
     private Integer age;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     @Override
     public String toString() {
