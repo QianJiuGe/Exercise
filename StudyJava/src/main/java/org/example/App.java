@@ -1,7 +1,7 @@
 package org.example;
 
 /**
- * Hello world!
+ * mytest包中是学习过程中实践用到的测试
  */
 public class App {
     public static void main(String[] args) {
