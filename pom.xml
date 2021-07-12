@@ -11,6 +11,7 @@
     <modules>
         <module>Test0629</module>
         <module>TestMybatis</module>
+        <module>StudyEnum</module>
     </modules>
 
     <properties>
