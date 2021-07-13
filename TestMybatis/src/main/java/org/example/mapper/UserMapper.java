@@ -9,6 +9,11 @@ public interface UserMapper {
     /**
      * 获取所有用户
      */
-    List<User> getAllUser();
+    public List<User> getAllUser();
+
+    /**
+     * 向数据库中插入数据
+     */
+    public int insertUser(User user);
 
 }

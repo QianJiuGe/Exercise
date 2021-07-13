@@ -24,4 +24,16 @@ public class TestMybatis {
             System.out.println(user);
         }
     }
+
+    @Test
+    public void insertUser(){
+        User u =new User().builder()
+                .id(2002L)
+                .username("wfj")
+                .age(26)
+                .email("www.wfj.com").build();
+
+        int res = userDao.insertUser(u);
+        System.out.println(res);
+    }
 }

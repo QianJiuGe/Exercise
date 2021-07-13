@@ -1,11 +1,14 @@
 package org.example.StudyLambda;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import org.junit.jupiter.api.Test;
 
 import javax.swing.plaf.synth.SynthSpinnerUI;
 import java.nio.channels.NonWritableChannelException;
 import java.util.Comparator;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 /**
  * Lambda表达式的使用
@@ -53,6 +56,23 @@ public class LambdaTest2 {
             return o1.compareTo(o2);
         };
         System.out.println(com2.compare(12,23));
+    }
+
+    @Test
+    public void test3(){
+
+        JSONArray jsonArray = JSONArray.parseArray("[{\"1\": {\"name\":\"maple\",\"sex\":\"man\",\"childrens\":[{\"name\":\"草根\",\"sex\":\"man\",\"date\":\"2018-01-01\"},{\"name\":\"merry\",\"sex\":\"woman\",\"date\":\"2017-01-01\"},{\"name\":\"liming\",\"sex\":\"woman\",\"date\":\"2016-01-01\"}]}}]");
+        jsonArray = jsonArray.stream().map(obj -> {
+            JSONObject returnObj = new JSONObject();
+            JSONObject jsonObj = (JSONObject)obj;
+            jsonObj.forEach((key,val) -> {
+                returnObj.put(key,((JSONObject)val).getJSONArray("childrens"));
+            });
+            return returnObj;
+        }).collect(Collectors.toCollection(JSONArray::new));
+
+        System.out.println(jsonArray);
+
     }
 
 }
