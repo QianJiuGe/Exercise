@@ -42,7 +42,9 @@ public class LambdaTest {
         System.out.println(compare1);
         System.out.println("****************************************");
 
-        Comparator<Integer> com2 = (o1,o2) -> Integer.compare(o1,o2);
+        Comparator<Integer> com2 = (o1,o2) ->{
+            return Integer.compare(o1,o2);
+        };
 
         int compare2 = com2.compare(13,12);
         System.out.println(compare2);
