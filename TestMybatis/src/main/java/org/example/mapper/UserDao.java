@@ -37,7 +37,7 @@ public class UserDao {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         int res = sqlSession.insert("insertUser",user);
         System.out.println("执行插入语句，插入数据为:"+user);
-        //mybatis默认不是自动提交事务的，所以在执行插入、修改和删除操作的时候需要手动提交
+        //mybatis默认不是自动提交事务的，所以在执行插入、修改和删除的操作的时候需要手动提交
         sqlSession.commit();
         sqlSession.close();
         return res;

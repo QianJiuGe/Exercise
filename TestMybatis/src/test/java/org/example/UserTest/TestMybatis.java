@@ -1,9 +1,7 @@
-package org.example.service;
+package org.example.UserTest;
 
-import org.apache.ibatis.reflection.SystemMetaObject;
 import org.example.mapper.UserDao;
 import org.example.pojo.User;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -12,13 +10,13 @@ import java.util.List;
 public class TestMybatis {
     private UserDao userDao;
 
-    @Before
     public void init() throws IOException {
         userDao = new UserDao("Mybatis.xml");
     }
 
     @Test
-    public void getAllUser(){
+    public void getAllUser() throws IOException {
+        init();
         List<User> users = userDao.getAllUser();
         for (User user:users ) {
             System.out.println(user);
@@ -26,12 +24,13 @@ public class TestMybatis {
     }
 
     @Test
-    public void insertUser(){
+    public void insertUser() throws IOException {
+        init();
         User u =new User().builder()
-                .id(2002L)
-                .username("wfj")
-                .age(26)
-                .email("www.wfj.com").build();
+                .id(2003L)
+                .username("zfc")
+                .age(28)
+                .email("www.zfc.com").build();
 
         int res = userDao.insertUser(u);
         System.out.println(res);

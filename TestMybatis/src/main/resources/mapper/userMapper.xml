@@ -13,7 +13,7 @@
     </select>
 
 <!--    <insert id="insert" parameterType="org.example.pojo.User">-->
-<!--        INSERT INTO student (name,score,age,gender) VALUES (#{name},#{score},#{age},#{gender});-->
+<!--        INSERT INTO student (nam    e,score,age,gender) VALUES (#{name},#{score},#{age},#{gender});-->
 <!--    </insert>-->
 
 <!--    <delete id="delete" parameterType="int">-->
