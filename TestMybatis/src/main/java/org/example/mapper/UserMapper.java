@@ -8,11 +8,11 @@ public interface UserMapper {
     /**
      * 获取所有用户
      */
-    public List<User> getAllUser();
+    List<User> getAllUser();
 
     /**
      * 向数据库中插入数据
      */
-    public int insertUser(User user);
+    int insertUser(User user);
 
 }

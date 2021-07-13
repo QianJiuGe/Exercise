@@ -10,6 +10,7 @@
         <module name="Test6_29" />
         <module name="StudyJava" />
         <module name="StudyEnum" />
+        <module name="TestMybatis02" />
         <module name="TestMybatis" />
       </profile>
     </annotationProcessing>
