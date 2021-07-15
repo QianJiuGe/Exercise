@@ -10,7 +10,6 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>StudyJava</module>
-        <module>TestMybatis</module>
         <module>StudyEnum</module>
         <module>TestMybatis02</module>
     </modules>

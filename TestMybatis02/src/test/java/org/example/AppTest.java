@@ -8,8 +8,13 @@ import org.example.service.UserService;
 import org.example.service.impl.UserServiceImpl;
 import org.junit.Test;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import static com.alibaba.fastjson.JSONArray.*;
 
@@ -51,12 +56,18 @@ public class AppTest
 
         //mapList.forEach();
 
-        mapList.forEach(map->{
+        List<Map<String, Object>> maps = mapList.stream().filter(distinctByKey(b -> b.get("username"))).collect(Collectors.toList());
+
+        maps.forEach(map->{
             System.out.println(map.get("id")+":"+map);
         });
 
         //System.out.println(jsonObjects);
     }
 
+    private static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
+        Map<Object,Boolean> seen = new ConcurrentHashMap<>();
+        return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
+    }
 
 }

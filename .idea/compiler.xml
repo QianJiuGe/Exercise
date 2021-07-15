@@ -11,7 +11,6 @@
         <module name="StudyJava" />
         <module name="StudyEnum" />
         <module name="TestMybatis02" />
-        <module name="TestMybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
