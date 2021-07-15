@@ -3,6 +3,7 @@ package org.example.service;
 import org.example.pojo.User;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserService {
 
@@ -16,4 +17,13 @@ public interface UserService {
      */
     int insertUser(User user);
 
+    /**
+     * 测试返回类型为map
+     */
+    Map<String,Object> selectOneUser();
+
+    /**
+     * 测试返回类型为List<Map>
+     */
+    List<Map<String,Object>> selectAllUser();
 }

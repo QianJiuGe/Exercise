@@ -4,6 +4,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Before;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,8 +18,7 @@ public class MybatisUtil {
         String configPath = "Mybatis.xml";
         try {
             InputStream inputStream = Resources.getResourceAsStream(configPath);
-            //创建sqlSession对象
-            SqlSessionFactory sqlSessionFactory = new  SqlSessionFactoryBuilder().build(inputStream);
+            sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }

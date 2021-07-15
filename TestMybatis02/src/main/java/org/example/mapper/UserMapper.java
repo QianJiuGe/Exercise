@@ -2,8 +2,14 @@ package org.example.mapper;
 
 import org.example.pojo.User;
 import java.util.List;
+import java.util.Map;
 
 public interface UserMapper {
+
+    /**
+     * 向数据库中插入数据
+     */
+    int insertUser(User user);
 
     /**
      * 获取所有用户
@@ -11,8 +17,12 @@ public interface UserMapper {
     List<User> getAllUser();
 
     /**
-     * 向数据库中插入数据
+     * 测试返回类型为map
      */
-    int insertUser(User user);
+    Map<String,Object> selectOneUser();
 
+    /**
+     * 测试返回类型为List<Map>
+     */
+    List<Map<String,Object>> selectAllUser();
 }
