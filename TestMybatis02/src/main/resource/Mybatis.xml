@@ -25,7 +25,15 @@
     </environments>
 
     <mappers>
-        <mapper resource="mapper/userMapper.xml"/>
+        <!--第一种方式  使用mapper标签-->
+        <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/ComputerMapper.xml"/>
+        <!--第一种方式  使用包名   这个包中的所有xml文件都可以加载到mybatis中
+            使用package的要求
+            1. mapper文件的名称需要和接口的一样，区分大小写
+            2. mapper文件要去mapper接口在同一目录下
+        -->
+<!--        <package name="mapper"/>-->
     </mappers>
     
 </configuration>

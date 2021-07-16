@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.mapper.ComputerMapper">
+
+    <select id="getAllComputer" resultType="org.example.pojo.Computer">
+        select id, brand, price, cpu, gpu, user_id as userId
+        from t_computer
+    </select>
+
+    <select id="getComputerAndName" resultType="java.util.Map">
+        select a.id, brand, price, cpu, gpu, username
+        from t_computer a
+                 left join t_user b on a.user_id = b.id
+    </select>
+
+
+
+    <select id="testFor" resultType="org.example.pojo.Computer">
+        select *
+        from t_computer a
+        where
+            a.id in
+        <foreach collection="list"  item="id" index="index" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </select>
+
+<!--    where标签可以去除语句中多余的 where、and、or  还可以自动添加where-->
+<!--    <select id="testWhereTag">-->
+<!--        select *-->
+<!--        from t_computer-->
+<!--        <where>-->
+<!--            <if test="">-->
+<!--                id = #{id}-->
+<!--            </if>-->
+<!--            <if test="">-->
+
+<!--            </if>-->
+<!--        </where>-->
+<!--    </select>-->
+
+</mapper>
+

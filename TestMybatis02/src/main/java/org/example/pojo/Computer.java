@@ -20,5 +20,5 @@ public class Computer {
     private BigDecimal price;
     private String cpu;
     private String gpu;
-
+    private Long userId;
 }
