@@ -14,9 +14,10 @@ import java.util.stream.Collectors;
 
 public class TestComputer {
 
+    ComputerService computerService = new ComputerServiceImpl();
+
     @Test
     public void test(){
-        ComputerService computerService = new ComputerServiceImpl();
         List<Computer> allComputer = computerService.getAllComputer();
 
         List<Computer> computers = allComputer.stream().filter(computer -> {
@@ -29,7 +30,6 @@ public class TestComputer {
 
     @Test
     public void test02(){
-        ComputerService computerService = new ComputerServiceImpl();
         List<Map<String,Object>> mapList = computerService.getComputerAndName();
 
         mapList.forEach(map->{
@@ -48,7 +48,7 @@ public class TestComputer {
         list.add(3);
         list.add(5);
 
-        ComputerService computerService = new ComputerServiceImpl();
+
         List<Computer> computers = computerService.testFor(list);
 
         computers.forEach(System.out::println);
