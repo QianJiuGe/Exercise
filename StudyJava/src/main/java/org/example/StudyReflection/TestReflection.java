@@ -102,7 +102,7 @@ public class TestReflection {
      */
 
     /**
-     * 获取Class实例的方式
+     * 获取Class实例的方式  (前三种方式需要掌握！！)
      */
     @Test
     public void test03() throws ClassNotFoundException {
@@ -114,13 +114,24 @@ public class TestReflection {
         Class clazz2 = p1.getClass();
         System.out.println(clazz2);
 
-        //方式三：调用Class的静态方法：forName(String classPath)
+        //方式三：（使用频率最高）调用Class的静态方法：forName(String classPath)
+        //运行的时候才会报找不到该类的错  方式一编译时就会报错
         Class clazz3 = Class.forName("org.example.StudyReflection.Person");
         System.out.println(clazz3);
 
         System.out.println(clazz == clazz2);
         System.out.println(clazz == clazz3);
+
+        //方式四：使用类的加载器(了解既可)
+        ClassLoader classLoader = TestReflection.class.getClassLoader();
+        Class clazz4 = classLoader.loadClass("org.example.StudyReflection.Person");
+        System.out.println(clazz4);
+        System.out.println(clazz4 == clazz);
     }
+
+    /**
+     * Java中万物都是对象
+     */
 }
 
 
