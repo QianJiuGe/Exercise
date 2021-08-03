@@ -3,11 +3,12 @@ package org.example.StudyReflection;
 import org.junit.jupiter.api.Test;
 import sun.plugin2.message.SetAppletSizeMessage;
 
-import java.io.File;
+import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Properties;
 
 /**
  * >反射被视为动态语言的关键，反射机制允许程序在执行期间借助Reflection API取得任何类的内部信息，并能直接操作任意对象的内部属性及方法
@@ -129,9 +130,35 @@ public class TestReflection {
         System.out.println(clazz4 == clazz);
     }
 
+
     /**
      * Java中万物都是对象
      */
+
+
+    /**
+     * Properties：用来读取配置文件
+     */
+    @Test
+    public void test10() throws IOException {
+        Properties properties = new Properties();
+        //读取配置文件的方式一
+        //此方式默认的加载位置是在  moudle目录下
+//        InputStream fileInputStream = new FileInputStream("src/main/resources/jdbc.properties");
+//        InputStreamReader reader = new InputStreamReader(fileInputStream);
+//        properties.load(reader);
+
+        //读取文件的方式二
+        //此方式的默认加载位置在src下  的而不是moudle（maven项目中直接写resources文件夹下的路径）
+        ClassLoader classLoader = TestReflection.class.getClassLoader();
+        InputStream is = classLoader.getResourceAsStream("jdbc.properties");
+        properties.load(is);
+
+        String user = properties.getProperty("user");
+        String password = properties.getProperty("password");
+
+        System.out.println("User:"+user+"   " + "Password:"+password);
+    }
 }
 
 
