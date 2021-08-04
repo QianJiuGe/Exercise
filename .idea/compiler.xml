@@ -9,8 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Test6_29" />
         <module name="StudyJava" />
-        <module name="StudyEnum" />
         <module name="TestMybatis02" />
+        <module name="StudyJava02" />
+        <module name="StudyJava03" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

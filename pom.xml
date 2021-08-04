@@ -12,6 +12,7 @@
         <module>StudyJava</module>
         <module>StudyEnum</module>
         <module>TestMybatis02</module>
+        <module>StudyJava03</module>
     </modules>
 
     <dependencies>
